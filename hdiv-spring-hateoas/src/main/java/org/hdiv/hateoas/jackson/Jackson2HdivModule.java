@@ -46,11 +46,11 @@ public class Jackson2HdivModule extends SimpleModule {
 		setMixInAnnotation(Link.class, LinkMixin.class);
 	}
 	
-	public static class HrefSerializer extends NonTypedScalarSerializerBase<String>
+	public static class UrlSerializer extends NonTypedScalarSerializerBase<String>
 	{
 		private LinkUrlProcessor linkUrlProcessor;
 		
-	    public HrefSerializer() {
+	    public UrlSerializer() {
 	    	super(String.class);
 	    	
 	    	ApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(HDIVUtil.getHttpServletRequest().getServletContext());

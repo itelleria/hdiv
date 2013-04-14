@@ -22,8 +22,8 @@ public abstract class LinkMixin extends Link {
 	private static final long serialVersionUID = 903175428883703163L;
 
 	@Override
-	@org.codehaus.jackson.map.annotate.JsonSerialize(using = org.hdiv.hateoas.jackson.Jackson1HdivModule.HrefSerializer.class)
-	@com.fasterxml.jackson.databind.annotation.JsonSerialize(using = org.hdiv.hateoas.jackson.Jackson2HdivModule.HrefSerializer.class)
+	@org.codehaus.jackson.map.annotate.JsonSerialize(using = org.hdiv.hateoas.jackson.Jackson1HdivModule.UrlSerializer.class)
+	@com.fasterxml.jackson.databind.annotation.JsonSerialize(using = org.hdiv.hateoas.jackson.Jackson2HdivModule.UrlSerializer.class)
 	public abstract String getHref();
 	
 }
