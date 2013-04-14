@@ -43,7 +43,7 @@ public class Jackson1HdivModule extends SimpleModule {
 		setMixInAnnotation(Link.class, LinkMixin.class);
 	}
 
-	public final class UrlSerializer extends NonTypedScalarSerializerBase<String>
+	public static class UrlSerializer extends NonTypedScalarSerializerBase<String>
 	{
 		private LinkUrlProcessor linkUrlProcessor;
 		
