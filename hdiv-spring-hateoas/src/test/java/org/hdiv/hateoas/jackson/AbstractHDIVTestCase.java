@@ -15,9 +15,6 @@
  */
 package org.hdiv.hateoas.jackson;
 
-import java.io.StringWriter;
-import java.io.Writer;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletRequestEvent;
@@ -37,8 +34,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.StaticWebApplicationContext;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * HDIV test parent class.
