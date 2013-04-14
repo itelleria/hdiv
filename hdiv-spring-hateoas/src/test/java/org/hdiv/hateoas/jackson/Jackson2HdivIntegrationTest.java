@@ -18,7 +18,7 @@ package org.hdiv.hateoas.jackson;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
 
-public class Jackson2HalIntegrationTest extends AbstractJackson2MarshallingIntegrationTests {
+public class Jackson2HdivIntegrationTest extends AbstractJackson2MarshallingIntegrationTests {
 	
 	protected void onSetUp() throws Exception {
 		mapper.registerModule(new Jackson2HdivModule());
