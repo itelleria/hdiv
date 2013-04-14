@@ -27,7 +27,9 @@ import org.codehaus.jackson.map.module.SimpleModule;
 import org.codehaus.jackson.map.ser.std.NonTypedScalarSerializerBase;
 import org.hdiv.urlProcessor.LinkUrlProcessor;
 import org.hdiv.util.HDIVUtil;
+import org.springframework.context.ApplicationContext;
 import org.springframework.hateoas.Link;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 public class Jackson1HdivModule extends SimpleModule {
 
@@ -45,10 +47,12 @@ public class Jackson1HdivModule extends SimpleModule {
 	{
 		private LinkUrlProcessor linkUrlProcessor;
 		
-	    public UrlSerializer(LinkUrlProcessor linkUrlProcessor) {
+	    public UrlSerializer() {
 	    	super(String.class);
 	    	
-	    	this.linkUrlProcessor = linkUrlProcessor;
+	    	ApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(HDIVUtil.getHttpServletRequest().getServletContext());
+	    	
+	    	this.linkUrlProcessor = applicationContext.getBean(LinkUrlProcessor.class);
 	    }
 
 	    @Override
